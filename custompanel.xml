@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+<button>
+     <halpin>"touch_plate"</halpin>
+     <text>"Touch Off Z"</text>
+     <font>('fixed',10)</font>
+</button>
+<button>
+     <halpin>"go_to_origin"</halpin>
+     <text>"Go To Origin"</text>
+     <font>('fixed',10)</font>
+</button>
+<button>
+     <halpin>"go_to_machine_home"</halpin>
+     <text>"Go To Machine Origin"</text>
+     <font>('fixed',10)</font>
+</button>
+<button>
+     <halpin>"set_origin"</halpin>
+     <text>"Set Origin"</text>
+     <font>('fixed',10)</font>
+</button>
+</pyvcp>

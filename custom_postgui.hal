@@ -1,0 +1,7 @@
+# Include your custom_postgui HAL commands here
+# This file will not be overwritten when you run stepconf again
+
+net remote-touch_plate halui.mdi-command-00 <= pyvcp.touch_plate
+net remote-go_to_origin halui.mdi-command-01 <= pyvcp.go_to_origin
+net remote-go_to_machine_home halui.mdi-command-02 <= pyvcp.go_to_machine_home
+net remote-set_origin halui.mdi-command-03 <= pyvcp.set_origin

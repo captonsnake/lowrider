@@ -40,6 +40,7 @@ properties = {
   writeTools: true, // writes the tools
   preloadTool: false, // preloads next tool on tool change if any
   customToolCode: true, // Use custom tool code located in nc_files SLM
+  exactPath: true, // Use exact path for linuxcnc
   showSequenceNumbers: true, // show sequence numbers
   sequenceNumberStart: 10, // first sequence number
   sequenceNumberIncrement: 5, // increment for sequence numbers
@@ -57,6 +58,7 @@ propertyDefinitions = {
   writeTools: {title:"Write tool list", description:"Output a tool list in the header of the code.", group:0, type:"boolean"},
   preloadTool: {title:"Preload tool", description:"Preloads the next tool at a tool change (if any).", type:"boolean"},
   customToolCode: {title:"Custom Tool Change", description:"Use custom tool code in nc_files/tool_change.ngc. Program is passed an argument with the tool number", type:"boolean"}, // SLM
+  exactPath: {title:"Do not use trajectory on LINUXCNC", description:"Disables trajectory on LINUXCNC.", type:"boolean"},
   showSequenceNumbers: {title:"Use sequence numbers", description:"Use sequence numbers for each block of outputted code.", group:1, type:"boolean"},
   sequenceNumberStart: {title:"Start sequence number", description:"The number at which to start the sequence numbers.", group:1, type:"integer"},
   sequenceNumberIncrement: {title:"Sequence number increment", description:"The amount by which the sequence number is incremented by in each block.", group:1, type:"integer"},
@@ -332,6 +334,10 @@ function onOpen() {
   case MM:
     writeBlock(gUnitModal.format(21));
     break;
+  }
+
+  if (properties.exactPath) {
+    writeBlock(gFormat.format(61));
   }
 }
 
